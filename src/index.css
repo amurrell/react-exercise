@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #eee;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Permanent Marker', cursive;
+}
+
+.highlight {
+    color: red;
+}
+
+hr {
+    width: 90vw;
+    border: none;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #fefefe;
+}

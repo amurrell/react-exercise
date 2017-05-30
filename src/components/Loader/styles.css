@@ -1,0 +1,17 @@
+.Loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Loader__icon {
+  font-size: 200px;
+  display: inline-block;
+  animation: pulse 0.4s alternate infinite ease-in-out; }
+  .Loader__icon:nth-child(odd) {
+    animation-delay: 0.4s; }
+
+@keyframes pulse {
+  to {
+    transform: scale(0.8);
+    opacity: 0.5; } }

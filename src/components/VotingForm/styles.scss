@@ -1,0 +1,38 @@
+.VotingForm {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.VotingForm__button {
+    background: #fff;
+    color: #333;
+    padding: 5px;
+    border: 3px solid #ccc;
+    min-width: 150px;
+    margin: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.VotingForm__button-icon {
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.VotingForm__button-text {
+
+}
+
+.VotingForm__button--alt {
+    border-color: purple;
+}
+
+.VotingForm__button--alt-1 {
+    border-color: orange;
+}
+

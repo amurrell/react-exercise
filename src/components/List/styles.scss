@@ -1,0 +1,41 @@
+.List {
+    margin: 30px;
+    padding: 30px;
+}
+
+.List__title {
+    text-align: center;
+}
+
+.List__item {
+    display: inline-block;
+}
+
+.List__item-count {
+
+}
+
+.List__list {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.List__button {
+    font-family: 'Permanent Marker', cursive;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    color: #ccc;
+    font-size: 22px;
+
+    &:hover {
+	color: red;
+    }
+
+    &:nth-child(odd) {
+	float: right;
+    }
+}

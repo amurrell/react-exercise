@@ -1,0 +1,48 @@
+.UserInfo {
+  margin: 10px;
+  position: relative; }
+
+.UserInfo__img {
+  border-radius: 100%;
+  margin: 20px auto;
+  font-size: 0;
+  max-width: 128px;
+  max-height: 128px; }
+
+.UserInfo__img--cat {
+  background: purple; }
+  .UserInfo__img--cat .UserInfo__img-img {
+    opacity: .8; }
+
+.UserInfo__img--dog {
+  background: orange; }
+  .UserInfo__img--dog .UserInfo__img-img {
+    opacity: .8; }
+
+.UserInfo__img--delete-on-click:hover {
+  cursor: pointer;
+  background: red;
+  position: relative; }
+  .UserInfo__img--delete-on-click:hover .UserInfo__img-img {
+    opacity: .3; }
+  .UserInfo__img--delete-on-click:hover::before {
+    content: 'X';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    line-height: 128px;
+    font-size: 30px;
+    color: #fff;
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-family: 'Permanent Marker', cursive; }
+
+.UserInfo__img-img {
+  border-radius: 100%;
+  opacity: 1;
+  transition: visibility, opacity .5s ease; }
+
+.UserInfo__name {
+  text-align: center; }
