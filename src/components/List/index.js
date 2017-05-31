@@ -6,34 +6,25 @@ import './styles.css';
 
 export default class List extends Component {
 
-//  @todo, figure out sorting and state
-//  state = {
-//    list: [],
-//    sortedList: []
-//  }
-//
-//  componentDidMount() {
-//
-//    if (!this.state.list.length) {
-//      this.setState({list: this.filterList()});
-//    }
-//
-//    console.log(this.props);
-//    console.log(this.state.list.length);
-//
-//    if (!this.state.sortedList.length) {
-//      this.setState({sortedList: this.filterList()});
-//    }
-//  }
-//
-//  sortListByName = (name, order) => () => {
-//      var newList = this.state.sortedList.sort(function(a, b) {
-//        var sort = a.name[name].localeCompare(b.name[name]);
-//        return order === 'asc' ? sort : !sort;
-//      });
-//
-//      this.setState({sortedList: newList});
-//  }
+  state = {
+    sort: false,
+    sortStyle: null
+  }
+
+  triggerSort = (order) => () => {
+    this.setState({sort: true, sortStyle: order});
+  }
+
+  sortListByName = (order) => {
+      const list = this.filterList();
+
+      var sorted = list.sort(function(a, b) {
+        return a.name.first.localeCompare(b.name.first);
+
+      });
+
+      return order === 'asc' ? sorted : sorted.reverse();
+  }
 
   renderListUser = (user) => {
     const {type, userDeleteCallback} = this.props;
@@ -57,16 +48,16 @@ export default class List extends Component {
 
   render() {
     const {type} = this.props;
-    const list = this.filterList();
-    const sort = this.sortListByName;
+    const sortCallback = this.triggerSort;
+    const list = (this.state.sort) ? this.sortListByName(this.state.sortStyle) : this.filterList()
 
     return (
       <div className="List">
         <h2 className="List__title">
           {capitalizeWords(type)} People
         </h2>
-        <button className="List__button" onClick="">A ⬆️</button>
-        <button className="List__button" onClick="">Z ⬇️</button>
+        <button className="List__button" onClick={sortCallback('asc')}>A ⬆️</button>
+        <button className="List__button" onClick={sortCallback('desc')}>Z ⬇️</button>
         <ul className="List__list">
         {list.map(this.renderListUser)}
         </ul>
